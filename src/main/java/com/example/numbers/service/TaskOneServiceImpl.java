@@ -25,17 +25,17 @@ public class TaskOneServiceImpl implements TaskOneService {
     }
 
     @Override
-    public List<Integer> listDistinctNumbers() {
+    public List<Integer> listAllDistinctNumbers() {
         return taskOneRepository.findDistinctByNumbers();
     }
 
     @Override
     public int countDistinctNumbers() {
-        return taskOneRepository.countByNumbers();
+        return taskOneRepository.findDistinctByCountNumbers();
     }
 
     @Override
     public int countNumbers() {
-        return 0;
+        return (int) taskOneRepository.count();
     }
 }

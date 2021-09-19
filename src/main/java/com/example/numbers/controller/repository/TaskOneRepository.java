@@ -20,8 +20,9 @@ public interface TaskOneRepository extends JpaRepository<TaskOneNumbers,Long> {
     List<Integer>findDistinctByNumbers();
 
     @Query("select count (distinct (numbers)) from TaskOneNumbers ")
-    List<TaskOneNumbers> findDistinctByCountNumbers();
+    int findDistinctByCountNumbers();
 
-    @Query("select count(numbers) from  TaskOneNumbers ")
-    int countByNumbers();
+//    @Query("select count(numbers) from  TaskOneNumbers ")
+//    int countByNumbers();
+
 }

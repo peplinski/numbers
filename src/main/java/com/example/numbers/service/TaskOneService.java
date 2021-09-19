@@ -8,7 +8,7 @@ public interface TaskOneService {
 
     int findMaxValue();
 
-    List<Integer> listDistinctNumbers();
+    List<Integer> listAllDistinctNumbers();
 
     int countDistinctNumbers();
 

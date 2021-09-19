@@ -23,8 +23,26 @@ public class TaskOneController {
 
     @GetMapping("/listDistNumbers")
     public String getNumbers(Model model){
-        List<Integer> numbersList = taskOneService.listDistinctNumbers();
+        List<Integer> numbersList = taskOneService.listAllDistinctNumbers();
         model.addAttribute("numbersList", numbersList);
+
+        int numberCount = taskOneService.countNumbers();
+        model.addAttribute("numberCount",numberCount);
+
+        int numberDistCount = taskOneService.countDistinctNumbers();
+        model.addAttribute("numberDistCount",numberDistCount);
+
+        int minNumber = taskOneService.findMinValue();
+        model.addAttribute("minNumber",minNumber);
+
+        int maxNumber = taskOneService.findMaxValue();
+        model.addAttribute("maxNumber",maxNumber);
         return "task1";
     }
+
+//    @GetMapping("/count")
+//    public String countNumbers(Model model){
+//
+//        return "task1";
+//    }
 }

@@ -14,6 +14,17 @@
         <!--/*@thymesVar id="num" type="java.util.List"*/-->
         <button type="button" class="btn btn-info btn-lg" style="margin: 3px;" th:each="num : ${numbersList}" th:text="${num}">Button</button>
     </div>
+    <p th:text="'count: ' + ${numberCount}">6</p>
+    <p th:text="'distinct: ' + ${numberDistCount}">6</p>
+    <p th:text="'min: ' + ${minNumber}">1</p>
+    <p th:text="'max: ' + ${maxNumber}">50</p>
 </div>
+
+<!--count numbers-->
+<!--<button class="btn-link"><a th:href="@{/count}">Count numbers</a></button>-->
+<!--<div class="col-md-12">-->
+<!-- <p th:text="'count: ' + ${numberCount}">6</p>   -->
+<!--</div>-->
+
 </body>
 </html>
