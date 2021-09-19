@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    
+</head>
+<body>
+<div class="container">
+    <header th:insert="fragments.html :: nav"></header>
+<div>
+    <h1>Task 1</h1>
+    <p>Dane wejściowe to długa lista liczb całkowitych. Napisz małą aplikację, która wyświetli listę różnych elementów
+        posortowane rosnąco, plus podstawowe informacje pomiarowe zawierające ilość elementów w źródle,
+        liczba odrębnych elementów, wartość minimalna i maksymalna.</p>
+    <p>expected output is:</p>
+    <p>1 2 5 10 20</p>
+    <p>count: 6</p>
+    <p>distinct: 5</p>
+    <p>min: 1</p>
+    <p>max: 20</p>
+</div>
+    <div>
+        <h1>Task 2</h1>
+        <p>Podaj działający kod, który znajdzie wszystkie pary (na tej liście liczb całkowitych), które sumują się do 13.
+            Każda para na wyjściu powinna mieć pierwszą liczbę nie większą niż druga, a wiersze powinny być posortowane w porządku rosnącym.</p>
+    </div>
+</div>
+
+</body>
+</html>
