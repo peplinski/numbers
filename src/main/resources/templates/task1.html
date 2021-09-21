@@ -7,24 +7,42 @@
 <body>
 <header th:insert="fragments.html :: nav"></header>
 
-<button class="btn-link"><a th:href="@{/listDistNumbers}">List Dicstinct Numbers</a></button>
+<section class="my-5">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Upload File Example</h2>
+            <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
+            <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="file" name="file" class="form-control-file">
+                </div>
+                <button type="submit" class="btn btn-primary">Upload File</button>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr>
+
+
+<!--wyświetlanie wyników-->
+<button class="btn-link"><a th:href="@{/showTask1}">Results task 1</a></button>
 <div class="col-md-12">
     <div>
         <!--/*@thymesVar id="Number" type="com.example.numbers.model.TaskOneNumbers"*/-->
         <!--/*@thymesVar id="num" type="java.util.List"*/-->
-        <button type="button" class="btn btn-info btn-lg" style="margin: 3px;" th:each="num : ${numbersList}" th:text="${num}">Button</button>
+        <button type="button" class="btn btn-info btn-lg" style="margin: 3px;" th:each="num : ${numbersList}"
+                th:text="${num}">Button
+        </button>
     </div>
     <p th:text="'count: ' + ${numberCount}">6</p>
     <p th:text="'distinct: ' + ${numberDistCount}">6</p>
     <p th:text="'min: ' + ${minNumber}">1</p>
     <p th:text="'max: ' + ${maxNumber}">50</p>
 </div>
-
-<!--count numbers-->
-<!--<button class="btn-link"><a th:href="@{/count}">Count numbers</a></button>-->
-<!--<div class="col-md-12">-->
-<!-- <p th:text="'count: ' + ${numberCount}">6</p>   -->
-<!--</div>-->
+<hr>
 
 </body>
 </html>

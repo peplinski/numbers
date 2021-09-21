@@ -14,6 +14,9 @@ public class TaskOneNumbers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @Column(name = "task_numbers")
     int numbers;
 
+    @Transient
+    MultipartFile file;
 }
