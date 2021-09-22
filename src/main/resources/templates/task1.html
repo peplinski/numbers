@@ -31,7 +31,7 @@
 <button class="btn-link"><a th:href="@{/showTask1}">Results task 1</a></button>
 <div class="col-md-12">
     <div>
-        <!--/*@thymesVar id="Number" type="com.example.numbers.model.TaskOneNumbers"*/-->
+        <!--/*@thymesVar id="Number" type="com.example.numbers.model.TaskNumbers"*/-->
         <!--/*@thymesVar id="num" type="java.util.List"*/-->
         <button type="button" class="btn btn-info btn-lg" style="margin: 3px;" th:each="num : ${numbersList}"
                 th:text="${num}">Button

@@ -53,10 +53,7 @@ public class TaskOneServiceImpl implements TaskOneService {
 
         try{
             InputStreamReader reader = new InputStreamReader(file.getInputStream());
-            CSVParser csvParser = new CSVParser(reader, CSVFormat.newFormat(',')
-                    .withRecordSeparator(",")
-                    .withIgnoreEmptyLines()
-                    .withFirstRecordAsHeader());
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.newFormat(','));
             for (CSVRecord record: csvParser){
                 taskNumber = new TaskOneNumbers();
                 taskNumber.setNumbers(Integer.parseInt(record.get(0)));
