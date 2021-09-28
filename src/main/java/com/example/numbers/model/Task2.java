@@ -16,9 +16,6 @@ public class Task2 {
 
     int numbers;
 
-
-    int sum;
-
     @Transient
     MultipartFile file;
 }

@@ -26,7 +26,7 @@ public class Task1Controller {
     }
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file, Task1 task1, RedirectAttributes attributes) {
+    public String uploadFile(@RequestParam(value = "file") MultipartFile file, Task1 task1, RedirectAttributes attributes) {
         // check if file is empty
         if (file.isEmpty()) {
             attributes.addFlashAttribute("message", "Please select a file to upload.");

@@ -28,7 +28,7 @@ public class Task2Controller {
     }
 
     @PostMapping("/uploadNumbers")
-    public String uploadFile(@RequestParam("file") MultipartFile file, Task2 task2, RedirectAttributes attributes) {
+    public String uploadFile(@RequestParam(value = "file") MultipartFile file, Task2 task2, RedirectAttributes attributes) {
         // check if file is empty
         if (file.isEmpty()) {
             attributes.addFlashAttribute("message", "Please select a file to upload.");
@@ -46,8 +46,8 @@ public class Task2Controller {
     }
 
     @GetMapping("/showSum")
-    public String showPairOfNumbers(@RequestParam(value = "sum")int sum, Model model) {
-        model.addAttribute("sum",sum);
+    public String showPairOfNumbers(@RequestParam(value = "sum") int sum, Model model) {
+        model.addAttribute("sum", sum);
         List<String> sorttedLIst = task2Service.findSum(sum);
         model.addAttribute("sorttedLIst", sorttedLIst);
 

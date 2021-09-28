@@ -32,6 +32,7 @@
 <div class="col-md-12">
     <!--/*@thymesVar id="task2" type="com.example.numbers.model.Task2"*/-->
     <form th:action="@{/showSum}">
+        <label>Wprowadź sumę: </label>
         <input type="text" th:name="sum"/>
         <input type="submit"/>
     </form>
