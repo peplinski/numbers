@@ -8,13 +8,13 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "task_numbers")
-public class TaskOneNumbers {
+public class Task1 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "task_numbers")
+    @Column(name = "task1_numbers")
     int numbers;
 
     @Transient

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Task1</title>
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <h2>Upload File Example</h2>
+            <h2>Upload file</h2>
             <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
             <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
                 <div class="form-group">
@@ -31,7 +31,7 @@
 <button class="btn-link"><a th:href="@{/showTask1}">Results task 1</a></button>
 <div class="col-md-12">
     <div>
-        <!--/*@thymesVar id="Number" type="com.example.numbers.model.TaskNumbers"*/-->
+        <!--/*@thymesVar id="Number" type="com.example.numbers.model.Task2"*/-->
         <!--/*@thymesVar id="num" type="java.util.List"*/-->
         <button type="button" class="btn btn-info btn-lg" style="margin: 3px;" th:each="num : ${numbersList}"
                 th:text="${num}">Button

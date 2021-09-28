@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Task2</title>
 </head>
 <body>
+<header th:insert="fragments.html :: nav"></header>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>Upload file</h2>
+                <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
+                <form method="post" th:action="@{/uploadNumbers}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="file" class="form-control-file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+
+<!--wyświetlanie wyników-->
+
+<div class="col-md-12">
+    <!--/*@thymesVar id="task2" type="com.example.numbers.model.Task2"*/-->
+    <form th:action="@{/showSum}">
+        <input type="text" th:name="sum"/>
+        <input type="submit"/>
+    </form>
+    <div>
+        <!--/*@thymesVar id="Number" type="com.example.numbers.model.Task2"*/-->
+        <!--/*@thymesVar id="num" type="java.util.List"*/-->
+        <p th:each="num : ${sorttedLIst}"
+                th:text="${num}"></p>
+    </div>
+</div>
+
 
 </body>
 </html>

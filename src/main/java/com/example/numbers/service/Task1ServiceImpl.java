@@ -1,7 +1,7 @@
 package com.example.numbers.service;
 
-import com.example.numbers.model.TaskOneNumbers;
-import com.example.numbers.repository.TaskOneRepository;
+import com.example.numbers.model.Task1;
+import com.example.numbers.repository.Task1Repository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -17,49 +17,49 @@ import java.util.List;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class TaskOneServiceImpl implements TaskOneService {
+public class Task1ServiceImpl implements Task1Service {
 
-    private final TaskOneRepository taskOneRepository;
-    TaskOneNumbers taskNumber;
+    private final Task1Repository task1Repository;
+    Task1 taskNumber;
 
     @Override
     public int findMinValue() {
-        return taskOneRepository.findMinNumber();
+        return task1Repository.findMinNumber();
     }
 
     @Override
     public int findMaxValue() {
-        return taskOneRepository.findMaxNumber();
+        return task1Repository.findMaxNumber();
     }
 
     @Override
     public List<Integer> listAllDistinctNumbers() {
-        return taskOneRepository.findDistinctByNumbers();
+        return task1Repository.findDistinctByNumbers();
     }
 
     @Override
     public int countDistinctNumbers() {
-        return taskOneRepository.findDistinctByCountNumbers();
+        return task1Repository.findDistinctByCountNumbers();
     }
 
     @Override
     public int countNumbers() {
-        return (int) taskOneRepository.count();
+        return (int) task1Repository.count();
     }
 
     @Override
     public void saveDataFromCsv(MultipartFile file) {
-        List<TaskOneNumbers> taskOneNumbers =new ArrayList<>();
+        List<Task1> taskOneNumbers =new ArrayList<>();
 
         try{
             InputStreamReader reader = new InputStreamReader(file.getInputStream());
             CSVParser csvParser = new CSVParser(reader, CSVFormat.newFormat(','));
             for (CSVRecord record: csvParser){
-                taskNumber = new TaskOneNumbers();
+                taskNumber = new Task1();
                 taskNumber.setNumbers(Integer.parseInt(record.get(0)));
                taskOneNumbers.add(taskNumber);
             }
-            taskOneRepository.saveAll(taskOneNumbers);
+            task1Repository.saveAll(taskOneNumbers);
             csvParser.close();
             reader.close();
 
